@@ -8,6 +8,7 @@ const apiKeyMiddleware = async (req, resp, next) => {
   if (apiKey !== process.env.PIXEL_SECRET) {
     return resp.status(401).json({ error: "API key is invalid" });
   }
+  console.log("API key is valid");
   next();
 };
 export default apiKeyMiddleware;
